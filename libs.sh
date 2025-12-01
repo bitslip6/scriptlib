@@ -79,6 +79,19 @@ progress_indicator() {
 }
 
 
+bold_put() {
+    tput bold
+    printf '%s' "$*"
+    tput sgr0
+}
+
+bold() {
+    # Print arguments in bold
+    printf '\e[1m%s\e[0m' "$*"
+}
+
+
+
 # usage:
 #   get_exe_path EXENAME
 # returns:
